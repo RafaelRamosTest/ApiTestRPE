@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+C:\Users\rafae\Desktop\Tecnologia\Automacao2\ApiTestRPE\.metadata\.plugins\org.eclipse.jdt.core
+515376392.index
+4089767660.index
