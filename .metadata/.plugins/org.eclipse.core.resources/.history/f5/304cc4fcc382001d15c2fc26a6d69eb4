@@ -1,0 +1,58 @@
+package steps;
+
+import java.util.Locale;
+
+import com.github.javafaker.Faker;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.restassured.response.Response;
+import org.junit.Assert;
+import service.UsersService;
+
+public class UsersSteps {
+	
+	Faker faker = new Faker(new Locale("pt-BR"));
+	
+	UsersService users = new UsersService();
+	
+	Response response;
+	
+	String body;
+	
+	String name;
+	
+	String job;
+	
+	@Given("que tenha preenchido as informacoes de cadastro")
+	public void que_tenha_preenchido_as_informacoes_de_cadastro() {
+		
+		name = faker.name().toString();
+		
+		job = faker.job().toString();
+		
+		body = users.body(name, job);
+		
+	}
+		
+	@Then("deve retornar as informacoes de cadastro")
+	public void deve_retornar_as_informacoes_de_cadastro() {
+	    
+		Assert.assertEquals(200, response.statusCode());
+		
+		Assert.assertEquals(name, response.jsonPath().getString("name"));
+		
+		Assert.assertEquals(name, response.jsonPath().getString("name"));
+		
+	}
+
+	@When("cadastrar usuario")
+	public void cadastrar_usuario() {
+	    
+		response = users.postUsers(body);
+		
+	}
+
+
+}

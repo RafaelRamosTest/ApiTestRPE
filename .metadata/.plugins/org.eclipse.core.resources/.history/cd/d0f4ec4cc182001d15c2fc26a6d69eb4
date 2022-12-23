@@ -1,0 +1,39 @@
+package steps;
+
+import java.util.Locale;
+
+import com.github.javafaker.Faker;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+
+public class UsersSteps {
+	
+	Faker faker = new Faker(new Locale("pt-BR"));
+	
+	UsersService users = new UsersService();
+	
+	@Given("que tenha preenchido as informacoes de cadastro")
+	public void que_tenha_preenchido_as_informacoes_de_cadastro() {
+
+		
+		
+	}
+		
+	@Then("deve retornar as informacoes de cadastro")
+	public void deve_retornar_as_informacoes_de_cadastro() {
+	    
+		
+		
+	}
+
+	@When("cadastrar usuario")
+	public void cadastrar_usuario() {
+	    
+		
+		
+	}
+
+
+}

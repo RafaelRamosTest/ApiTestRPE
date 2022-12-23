@@ -1,0 +1,31 @@
+package utils;
+
+import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.InputMismatchException;
+import java.util.Random;
+
+public class Utils {
+	
+
+	
+	
+	
+	public String dataAtual = "";
+	
+	public String data() {
+		
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		
+		dataAtual = dtf.format(LocalDateTime.now()) + "T00:00:00";
+		
+        //System.out.println("Data" + dataAtual);
+		
+		return dataAtual;
+	}
+	
+}

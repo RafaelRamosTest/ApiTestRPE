@@ -1,0 +1,15 @@
+@users
+Feature: Users
+	
+@cadastrarUsuariosSucesso
+Scenario: Deve cadastrar usuarios com sucesso preenchendo as informacoes corretamente
+	Given que tenha preenchido as informacoes de cadastro
+	When cadastrar usuario
+	Then deve retornar as informacoes de cadastro
+	
+@cadastrarUsuariosSucesso
+Scenario: Deve cadastrar usuarios com sucesso preenchendo as informacoes corretamente
+	Given que tenha preenchido as informacoes de cadastro
+	When cadastrar usuario
+	Then deve retornar as informacoes de cadastro
+	

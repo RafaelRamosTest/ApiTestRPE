@@ -1,0 +1,29 @@
+package steps;
+
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+
+public class UsersSteps {
+	
+	@Given("que tenha preenchido as informacoes de cadastro")
+	public void que_tenha_preenchido_as_informacoes_de_cadastro() {
+
+		
+		
+	}
+	
+	@When("cadastrar usuario")
+	public void cadastrar_usuario() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+	@Then("deve retornar as informacoes de cadastro")
+	public void deve_retornar_as_informacoes_de_cadastro() {
+	    // Write code here that turns the phrase above into concrete actions
+	    throw new io.cucumber.java.PendingException();
+	}
+
+
+
+
+}
