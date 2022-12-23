@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="apiTestRPE" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="tests.TestRunner" time="3.633">
+    <testsuite name="Users" time="3.633">
+      <testcase name="Deve cadastrar usuarios com sucesso preenchendo as informacoes corretamente" classname="Users" time="3.633">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'deve retornar 201 e as informacoes' is undefined.
+You can implement this step using the snippet(s) below:
+
+@Then("deve retornar {int} e as informacoes")
+public void deve_retornar_e_as_informacoes(Integer int1) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

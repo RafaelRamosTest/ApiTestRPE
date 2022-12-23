@@ -21,6 +21,26 @@ public class UsersService {
 		
 	}
 	
+	public Response putUsers(String body, int idUser) {
+		
+		String urlUsers = "/users/" + idUser;
+		
+		response = send.putRequest(config.dominio, urlUsers, body);
+		
+        return response;
+		
+	}
+	
+	public Response patchUsers(String body, int idUser) {
+		
+		String urlUsers = "/users/" + idUser;
+		
+		response = send.patchRequest(config.dominio, urlUsers, body);
+		
+        return response;
+		
+	}
+	
 	public String body(String name, String job) {
 		
 		String body = "{\r\n"
@@ -44,10 +64,20 @@ public class UsersService {
 	
 	public Response getListUsersForPage(int page) {
 		
-		String urlUsers = "/users?page" + page;
+		String urlUsers = "/users?page=" + page;
 		
 		response = send.getRequest(config.dominio, urlUsers);		
         
+        return response;
+		
+	}
+	
+	public Response deleteUsers(int idUser) {
+		
+		String urlUsers = "/users/" + idUser;
+		
+		response = send.deleteRequest(config.dominio, urlUsers);
+		
         return response;
 		
 	}

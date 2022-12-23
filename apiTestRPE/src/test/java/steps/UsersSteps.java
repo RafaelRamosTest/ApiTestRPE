@@ -4,6 +4,7 @@ import java.util.Locale;
 
 import com.github.javafaker.Faker;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,6 +14,7 @@ import service.UsersService;
 import org.junit.Assert;
 
 import utils.Utils;
+import validation.Validation;
 
 public class UsersSteps {
 	
@@ -21,6 +23,8 @@ public class UsersSteps {
 	UsersService users = new UsersService();
 	
 	Utils utils = new Utils();
+	
+	Validation validation = new Validation();
 	
 	Response response;
 	
@@ -32,8 +36,10 @@ public class UsersSteps {
 	
 	String mensagem;
 	
-	@Given("que tenha preenchido as informacoes de cadastro")
-	public void que_tenha_preenchido_as_informacoes_de_cadastro() {
+	int idUser;
+	
+	@Given("que tenha preenchido as informacoes corretamente")
+	public void que_tenha_preenchido_as_informacoes_corretamente() {
 		
 		name = faker.name().fullName();
 		
@@ -43,14 +49,19 @@ public class UsersSteps {
 		
 	}
 		
-	@Then("deve retornar as informacoes de cadastro")
-	public void deve_retornar_as_informacoes_de_cadastro() {
+	@Then("deve retornar {int} e as informacoes")
+	public void deve_retornar_e_as_informacoes(int status) {
 	    
-		Assert.assertEquals(201, response.statusCode());
+		Assert.assertEquals(status, response.statusCode());
 		
 		Assert.assertEquals(name, response.jsonPath().getString("name"));
 		
 		Assert.assertEquals(job, response.jsonPath().getString("job"));
+		
+	}
+	
+	@And("data de cadastro")
+	public void data_de_cadastro() {
 		
 		Assert.assertEquals(utils.data(), response.jsonPath().getString("createdAt").substring(0, 10));
 		
@@ -85,6 +96,36 @@ public class UsersSteps {
 		
 	}
 	
+	@And("informado id do usuario")
+	public void informado_id_do_usuario() {
+	    
+		response = users.getListUsers();
+		
+		idUser = response.jsonPath().getInt("data[0].id");
+		
+	}
+
+	@When("alterar usuario")
+	public void alterar_usuario() {
+	    
+		response = users.putUsers(body, idUser);
+		
+	}
+	
+	@When("alterar usuario2")
+	public void alterar_usuario2() {
+		
+		response = users.patchUsers(body, idUser);
+		
+	}
+	
+	@And("data de alteracao")
+	public void data_de_alteracao() {
+		
+		Assert.assertEquals(utils.data(), response.jsonPath().getString("updatedAt").substring(0, 10));
+		
+	}
+	
 	@When("consultar usuarios")
 	public void consultar_usuarios() {
 	    
@@ -94,16 +135,60 @@ public class UsersSteps {
 	
 	@Then("deve retornar lista de usuarios")
 	public void deve_retornar_lista_de_usuarios() {
-	    
-		Assert.assertEquals(200, response.statusCode());
 		
-		Assert.assertEquals("12", response.jsonPath().getString("total"));
+		int page = 1;
+		
+		validation.validationUsersListForPage(response, page);
 		
 		Assert.assertEquals("George", response.jsonPath().getString("data[0].first_name"));
 		
 	}
+	
+	@When("consultar usuarios por pagina {int}")
+	public void consultar_usuarios_por_pagina(int page) {
 
+		response = users.getListUsersForPage(page);
+		
+	}
+	
+	@Then("deve retornar lista de usuarios por pagina {int}")
+	public void deve_retornar_lista_de_usuarios_por_pagina(int page) {
+		
+		validation.validationUsersListForPage(response, page);
+		
+	}
 
+	@Then("nao deve retornar lista de usuarios por pagina {int}")
+	public void nao_deve_retornar_lista_de_usuarios_por_pagina(int page) {
+
+		validation.validationUsersListForPage(response, page);
+		
+		Assert.assertEquals("[]", response.jsonPath().getString("data"));
+		
+	}
+
+	@Given("que preenchido id do usuario")
+	public void que_preenchido_id_do_usuario() {
+	    
+		response = users.getListUsers();
+		
+		idUser = response.jsonPath().getInt("data[0].id");
+		
+	}
+	
+	@When("excluir usuario")
+	public void excluir_usuario() {
+	    
+		response = users.deleteUsers(idUser);
+		
+	}
+	
+	@Then("deve excluir e retornar status {int}")
+	public void deve_excluir_e_retornar_status(int status) {
+	    
+		Assert.assertEquals(status, response.statusCode());
+		
+	}
 
 
 

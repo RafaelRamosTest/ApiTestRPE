@@ -14,17 +14,11 @@ import io.cucumber.junit.Cucumber;
 			   //,tags= ("@cadastrarUsuariosErro")
 			   //,tags= ("@listarUsuariosSucesso")
 			   //,tags= ("@listarUsuariosSucesso")
-			   ,tags= ("@listarUsuariosSucesso2")
-						//,tags= ("@listarUsuariosSucesso")
-						//,tags= ("@listarUsuariosSucesso")
-						//,tags= ("@listarUsuariosSucesso")
-						//,tags= ("@listarUsuariosSucesso")
-						//,tags= ("@listarUsuariosSucesso")
-						//,tags= ("@listarUsuariosSucesso")
-						//,tags= ("@listarUsuariosSucesso")
-						 
-						 
-			   
+			   //,tags= ("@listarUsuariosSucesso2")
+			   //,tags= ("@listarUsuariosSucesso3")
+			   //,tags= ("@alterarUsuariosSucesso")
+			   //,tags= ("@alterarUsuariosSucesso2")
+			   //,tags= ("@excluirUsuariosSucesso")   
 						 
 				)
 public class TestRunner {

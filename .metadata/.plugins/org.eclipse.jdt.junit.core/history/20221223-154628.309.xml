@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="apiTestRPE" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="tests.TestRunner" time="24.164">
+    <testsuite name="Users" time="24.164">
+      <testcase name="Deve cadastrar usuarios com sucesso preenchendo as informacoes corretamente" classname="Users" time="24.164"/>
+    </testsuite>
+  </testsuite>
+</testrun>

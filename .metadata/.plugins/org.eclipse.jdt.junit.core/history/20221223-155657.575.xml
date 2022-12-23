@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="apiTestRPE" tests="1" started="1" failures="0" errors="1" ignored="0">
+  <testsuite name="tests.TestRunner" time="0.494">
+    <testsuite name="Users" time="0.494">
+      <testcase name="Deve alterar usuarios preenchendo as informacoes corretamente" classname="Users" time="0.494">
+        <error>io.cucumber.junit.UndefinedStepException: The step 'informado id do usuario' and 1 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@Given("informado id do usuario")
+public void informado_id_do_usuario() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("alterar usuario")
+public void alterar_usuario() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+&#13;
+&#13;
+</error>
+      </testcase>
+    </testsuite>
+  </testsuite>
+</testrun>

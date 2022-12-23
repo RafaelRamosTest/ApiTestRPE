@@ -164,6 +164,23 @@ public class Service {
         
     }
 	
+	public Response putRequest(String dominio, String url, String body) {
+		
+		RestAssured.baseURI = dominio;
+		
+        Response response = given()
+                .header("Content-type", "application/json")
+                .and()
+                .body(body)
+                .when()
+                .put(url)
+                .then()
+                .extract().response();
+
+        return response;
+        
+    }
+	
 	public Response patchRequest(String dominio, String url, String body, String token) {
         
 		RestAssured.baseURI = dominio;
@@ -175,6 +192,39 @@ public class Service {
                 .body(body)
                 .when()
                 .patch(url)
+                .then()
+                .extract().response();
+
+        return response;
+        
+    }
+	
+	public Response patchRequest(String dominio, String url, String body) {
+        
+		RestAssured.baseURI = dominio;
+		
+		Response response = given()
+                .header("Content-type", "application/json")
+                .and()
+                .body(body)
+                .when()
+                .patch(url)
+                .then()
+                .extract().response();
+
+        return response;
+        
+    }
+	
+	public Response deleteRequest(String dominio, String url) {
+        
+		RestAssured.baseURI = dominio;
+		
+		Response response = given()
+                .header("Content-type", "application/json")
+                .and()
+                .when()
+                .delete(url)
                 .then()
                 .extract().response();
 
