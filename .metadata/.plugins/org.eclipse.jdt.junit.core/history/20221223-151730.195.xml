@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="TestRunner" project="apiTestRPE" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="tests.TestRunner" time="66.654">
-    <testsuite name="Users" time="66.654">
-      <testcase name="Deve listar usuarios por pagina com sucesso #1" classname="Users" time="50.278"/>
-      <testcase name="Deve listar usuarios por pagina com sucesso #2" classname="Users" time="16.376"/>
-    </testsuite>
-  </testsuite>
-</testrun>

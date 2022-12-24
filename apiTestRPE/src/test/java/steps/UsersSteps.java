@@ -4,6 +4,9 @@ import java.util.Locale;
 
 import com.github.javafaker.Faker;
 
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -14,7 +17,6 @@ import service.UsersService;
 import org.junit.Assert;
 
 import utils.Utils;
-import validation.Validation;
 
 public class UsersSteps {
 	
@@ -24,9 +26,9 @@ public class UsersSteps {
 	
 	Utils utils = new Utils();
 	
-	Validation validation = new Validation();
-	
 	Response response;
+	
+	Scenario scenario;
 	
 	String body;
 	
@@ -37,6 +39,13 @@ public class UsersSteps {
 	String mensagem;
 	
 	int idUser;
+	
+	@Before("@users")
+	public void iniciar(Scenario scenario) {
+		
+		this.scenario = scenario;		
+		
+	}
 	
 	@Given("que tenha preenchido as informacoes corretamente")
 	public void que_tenha_preenchido_as_informacoes_corretamente() {
@@ -138,7 +147,7 @@ public class UsersSteps {
 		
 		int page = 1;
 		
-		validation.validationUsersListForPage(response, page);
+		validationUsersListForPage(response, page);
 		
 		Assert.assertEquals("George", response.jsonPath().getString("data[0].first_name"));
 		
@@ -154,14 +163,14 @@ public class UsersSteps {
 	@Then("deve retornar lista de usuarios por pagina {int}")
 	public void deve_retornar_lista_de_usuarios_por_pagina(int page) {
 		
-		validation.validationUsersListForPage(response, page);
+		validationUsersListForPage(response, page);
 		
 	}
 
 	@Then("nao deve retornar lista de usuarios por pagina {int}")
 	public void nao_deve_retornar_lista_de_usuarios_por_pagina(int page) {
 
-		validation.validationUsersListForPage(response, page);
+		validationUsersListForPage(response, page);
 		
 		Assert.assertEquals("[]", response.jsonPath().getString("data"));
 		
@@ -187,6 +196,27 @@ public class UsersSteps {
 	public void deve_excluir_e_retornar_status(int status) {
 	    
 		Assert.assertEquals(status, response.statusCode());
+		
+	}
+	
+	private void validationUsersListForPage(Response response, int page) {
+		
+		Assert.assertEquals(200, response.statusCode());
+		
+		Assert.assertEquals(page, response.jsonPath().getInt("page"));
+		
+		Assert.assertEquals(6, response.jsonPath().getInt("per_page"));
+		
+		Assert.assertEquals(12, response.jsonPath().getInt("total"));
+		
+		Assert.assertEquals(2, response.jsonPath().getInt("total_pages"));
+		
+	}
+	
+	@After("@users")
+	public void finalizar() {
+		
+		
 		
 	}
 
