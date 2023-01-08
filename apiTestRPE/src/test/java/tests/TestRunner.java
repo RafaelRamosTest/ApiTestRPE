@@ -7,9 +7,10 @@ import io.cucumber.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/resources/features"
 				 ,glue={"steps"}
-				 ,plugin = { "pretty", "html:report/relatorio.html"}
+				 ,plugin = {"json:report/cucumber.json"}
+				 //,plugin = { "pretty", "html:report/relatorio.html"}
 				 ,publish = true
-			   //,tags= ("@users")
+			   ,tags= ("@users")
 			   //,tags= ("@cadastrarUsuariosSucesso")
 			   //,tags= ("@cadastrarUsuariosErro")
 			   //,tags= ("@listarUsuariosSucesso")
