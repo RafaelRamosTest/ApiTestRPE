@@ -20,7 +20,7 @@ pipeline{
             steps {
 
                 withMaven(maven: 'M3') {
-                    sh '${M3}/bin/mvn test'
+                    sh '${mvn test'
 
                 }
 
