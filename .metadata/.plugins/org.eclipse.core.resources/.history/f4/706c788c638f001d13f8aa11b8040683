@@ -19,7 +19,7 @@ pipeline{
 
             steps {
 
-                withMaven(maven: 'M3') {
+                withMaven(maven: 'maven 3.8.7') {
                     sh 'mvn test'
 
                 }
