@@ -1,0 +1,776 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "start_timestamp": "2023-01-08T14:07:13.791Z",
+        "before": [
+          {
+            "result": {
+              "duration": 69598600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.iniciar(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 13,
+        "name": "Deve cadastrar usuarios com sucesso preenchendo as informacoes corretamente",
+        "description": "",
+        "id": "users;deve-cadastrar-usuarios-com-sucesso-preenchendo-as-informacoes-corretamente;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 997700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.finalizar()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 225324300,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "que tenha preenchido as informacoes corretamente",
+            "match": {
+              "location": "steps.UsersSteps.que_tenha_preenchido_as_informacoes_corretamente()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3505863100,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "cadastrar usuario",
+            "match": {
+              "location": "steps.UsersSteps.cadastrar_usuario()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 698580400,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "deve retornar 201 e as informacoes",
+            "match": {
+              "arguments": [
+                {
+                  "val": "201",
+                  "offset": 14
+                }
+              ],
+              "location": "steps.UsersSteps.deve_retornar_e_as_informacoes(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 15956600,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "data de cadastro",
+            "match": {
+              "location": "steps.UsersSteps.data_de_cadastro()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@users"
+          },
+          {
+            "name": "@cadastrarUsuariosSucesso"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-01-08T14:07:18.426Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.iniciar(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Nao deve cadastrar usuarios sem informar nome",
+        "description": "",
+        "id": "users;nao-deve-cadastrar-usuarios-sem-informar-nome",
+        "after": [
+          {
+            "result": {
+              "duration": 997000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.finalizar()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 54375400,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "que tenha preenchido as informacoes de cadastro sem nome",
+            "match": {
+              "location": "steps.UsersSteps.que_tenha_preenchido_as_informacoes_de_cadastro_sem_nome()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 684399300,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "cadastrar usuario",
+            "match": {
+              "location": "steps.UsersSteps.cadastrar_usuario()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "error_message": "java.lang.AssertionError: expected:\u003c422\u003e but was:\u003c201\u003e\r\n\tat org.junit.Assert.fail(Assert.java:89)\r\n\tat org.junit.Assert.failNotEquals(Assert.java:835)\r\n\tat org.junit.Assert.assertEquals(Assert.java:647)\r\n\tat org.junit.Assert.assertEquals(Assert.java:633)\r\n\tat steps.UsersSteps.deve_retornar_erro_de_nome_invalido(UsersSteps.java:95)\r\n\tat ✽.deve retornar erro de nome invalido(file:///C:/Users/rafae/Desktop/Tecnologia/Automacao2/ApiTestRPE/apiTestRPE/src/test/resources/features/users/Users.feature:19)\r\n",
+              "duration": 5029800,
+              "status": "failed"
+            },
+            "line": 19,
+            "name": "deve retornar erro de nome invalido",
+            "match": {
+              "location": "steps.UsersSteps.deve_retornar_erro_de_nome_invalido()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@users"
+          },
+          {
+            "name": "@cadastrarUsuariosErro"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-01-08T14:07:19.203Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2001600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.iniciar(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 22,
+        "name": "Deve listar usuarios com sucesso",
+        "description": "",
+        "id": "users;deve-listar-usuarios-com-sucesso",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.finalizar()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 703813900,
+              "status": "passed"
+            },
+            "line": 23,
+            "name": "consultar usuarios",
+            "match": {
+              "location": "steps.UsersSteps.consultar_usuarios()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 159047500,
+              "status": "passed"
+            },
+            "line": 24,
+            "name": "deve retornar lista de usuarios",
+            "match": {
+              "location": "steps.UsersSteps.deve_retornar_lista_de_usuarios()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@users"
+          },
+          {
+            "name": "@listarUsuariosSucesso"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-01-08T14:07:20.083Z",
+        "before": [
+          {
+            "result": {
+              "duration": 2993200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.iniciar(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 33,
+        "name": "Deve listar usuarios por pagina com sucesso",
+        "description": "",
+        "id": "users;deve-listar-usuarios-por-pagina-com-sucesso;;2",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.finalizar()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 669092400,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "consultar usuarios por pagina 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 30
+                }
+              ],
+              "location": "steps.UsersSteps.consultar_usuarios_por_pagina(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 82522100,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "deve retornar lista de usuarios por pagina 1",
+            "match": {
+              "arguments": [
+                {
+                  "val": "1",
+                  "offset": 43
+                }
+              ],
+              "location": "steps.UsersSteps.deve_retornar_lista_de_usuarios_por_pagina(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@users"
+          },
+          {
+            "name": "@listarUsuariosSucesso2"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-01-08T14:07:20.848Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.iniciar(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 34,
+        "name": "Deve listar usuarios por pagina com sucesso",
+        "description": "",
+        "id": "users;deve-listar-usuarios-por-pagina-com-sucesso;;3",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.finalizar()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 695571100,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "consultar usuarios por pagina 2",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 30
+                }
+              ],
+              "location": "steps.UsersSteps.consultar_usuarios_por_pagina(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 74448700,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "deve retornar lista de usuarios por pagina 2",
+            "match": {
+              "arguments": [
+                {
+                  "val": "2",
+                  "offset": 43
+                }
+              ],
+              "location": "steps.UsersSteps.deve_retornar_lista_de_usuarios_por_pagina(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@users"
+          },
+          {
+            "name": "@listarUsuariosSucesso2"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-01-08T14:07:21.627Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.iniciar(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 43,
+        "name": "Nao deve listar usuarios por pagina informando pagina invalida",
+        "description": "",
+        "id": "users;nao-deve-listar-usuarios-por-pagina-informando-pagina-invalida;;2",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.finalizar()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 634846400,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "consultar usuarios por pagina 10",
+            "match": {
+              "arguments": [
+                {
+                  "val": "10",
+                  "offset": 30
+                }
+              ],
+              "location": "steps.UsersSteps.consultar_usuarios_por_pagina(int)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 74595400,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "nao deve retornar lista de usuarios por pagina 10",
+            "match": {
+              "arguments": [
+                {
+                  "val": "10",
+                  "offset": 47
+                }
+              ],
+              "location": "steps.UsersSteps.nao_deve_retornar_lista_de_usuarios_por_pagina(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@users"
+          },
+          {
+            "name": "@listarUsuariosSucesso3"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-01-08T14:07:22.346Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.iniciar(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 55,
+        "name": "Deve alterar usuarios preenchendo as informacoes corretamente",
+        "description": "",
+        "id": "users;deve-alterar-usuarios-preenchendo-as-informacoes-corretamente;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 994900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.finalizar()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 43403000,
+              "status": "passed"
+            },
+            "line": 47,
+            "name": "que tenha preenchido as informacoes corretamente",
+            "match": {
+              "location": "steps.UsersSteps.que_tenha_preenchido_as_informacoes_corretamente()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 205493900,
+              "status": "passed"
+            },
+            "line": 48,
+            "name": "informado id do usuario",
+            "match": {
+              "location": "steps.UsersSteps.informado_id_do_usuario()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 607904800,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "alterar usuario",
+            "match": {
+              "location": "steps.UsersSteps.alterar_usuario()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 53450300,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "deve retornar 200 e as informacoes",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 14
+                }
+              ],
+              "location": "steps.UsersSteps.deve_retornar_e_as_informacoes(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 14658700,
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "data de alteracao",
+            "match": {
+              "location": "steps.UsersSteps.data_de_alteracao()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@users"
+          },
+          {
+            "name": "@alterarUsuariosSucesso"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-01-08T14:07:23.290Z",
+        "before": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.iniciar(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 67,
+        "name": "Deve alterar usuarios preenchendo as informacoes",
+        "description": "",
+        "id": "users;deve-alterar-usuarios-preenchendo-as-informacoes;;2",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.finalizar()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 19986300,
+              "status": "passed"
+            },
+            "line": 59,
+            "name": "que tenha preenchido as informacoes corretamente",
+            "match": {
+              "location": "steps.UsersSteps.que_tenha_preenchido_as_informacoes_corretamente()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 214839900,
+              "status": "passed"
+            },
+            "line": 60,
+            "name": "informado id do usuario",
+            "match": {
+              "location": "steps.UsersSteps.informado_id_do_usuario()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 606162700,
+              "status": "passed"
+            },
+            "line": 61,
+            "name": "alterar usuario2",
+            "match": {
+              "location": "steps.UsersSteps.alterar_usuario2()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 19432100,
+              "status": "passed"
+            },
+            "line": 62,
+            "name": "deve retornar 200 e as informacoes",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 14
+                }
+              ],
+              "location": "steps.UsersSteps.deve_retornar_e_as_informacoes(int)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 8975500,
+              "status": "passed"
+            },
+            "line": 63,
+            "name": "data de alteracao",
+            "match": {
+              "location": "steps.UsersSteps.data_de_alteracao()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@users"
+          },
+          {
+            "name": "@alterarUsuariosSucesso2"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2023-01-08T14:07:24.169Z",
+        "before": [
+          {
+            "result": {
+              "duration": 998300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.iniciar(io.cucumber.java.Scenario)"
+            }
+          }
+        ],
+        "line": 77,
+        "name": "Deve excluir usuarios informando id",
+        "description": "",
+        "id": "users;deve-excluir-usuarios-informando-id;;2",
+        "after": [
+          {
+            "result": {
+              "status": "passed"
+            },
+            "match": {
+              "location": "steps.UsersSteps.finalizar()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 554424900,
+              "status": "passed"
+            },
+            "line": 71,
+            "name": "que preenchido id do usuario",
+            "match": {
+              "location": "steps.UsersSteps.que_preenchido_id_do_usuario()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 669662500,
+              "status": "passed"
+            },
+            "line": 72,
+            "name": "excluir usuario",
+            "match": {
+              "location": "steps.UsersSteps.excluir_usuario()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 73,
+            "name": "deve excluir e retornar status 204",
+            "match": {
+              "arguments": [
+                {
+                  "val": "204",
+                  "offset": 31
+                }
+              ],
+              "location": "steps.UsersSteps.deve_excluir_e_retornar_status(int)"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@users"
+          },
+          {
+            "name": "@excluirUsuariosSucesso"
+          }
+        ]
+      }
+    ],
+    "name": "Users",
+    "description": "",
+    "id": "users",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/users/Users.feature",
+    "tags": [
+      {
+        "name": "@users",
+        "type": "Tag",
+        "location": {
+          "line": 1,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
