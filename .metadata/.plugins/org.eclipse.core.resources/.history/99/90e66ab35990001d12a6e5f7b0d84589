@@ -9,7 +9,7 @@ pipeline{
             steps {
 
                 withMaven(maven: 'M3') {
-                    bat 'C:/Users/rafae/Downloads/apache-maven-3.8.7/mvn clean install'
+                    bat C:/Users/rafae/Downloads/apache-maven-3.8.7/mvn clean install
 
                 }
 
