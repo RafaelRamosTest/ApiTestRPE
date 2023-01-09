@@ -18,7 +18,7 @@ pipeline{
             steps {
 
                 withMaven(maven: 'M3') {
-                    bat 'mvn - f ("C://ProgramData//Jenkins//.jenkins//workspace//s-pipeline-cucumber-example_main//apiTestRPE//pom.xml") compile'
+                    bat 'mvn - f ("C://ProgramData//Jenkins//.jenkins//workspace\s-pipeline-cucumber-example_main\apiTestRPE//pom.xml") compile'
 
                 }
 
