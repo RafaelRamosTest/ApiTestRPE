@@ -4,7 +4,7 @@ pipeline{
 
     stages {
 
-        stage ('Maven Install') {
+        stage ('Compile Stage') {
 
             steps {
 
@@ -18,6 +18,15 @@ pipeline{
         }
         
         stage ('Compile Stage') {
+
+            steps {
+
+                withMaven(maven: 'M3') {
+                    bat 'mvn clean install'
+
+                }
+
+            }
             
             steps {
 
