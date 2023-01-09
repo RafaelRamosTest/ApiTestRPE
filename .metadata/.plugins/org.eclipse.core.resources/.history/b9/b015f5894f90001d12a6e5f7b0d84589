@@ -8,7 +8,7 @@ pipeline{
 
             steps {
             
-            	withMaven(maven: 'M3') {
+            withMaven(maven: 'M3') {
                     bat 'mvn - f ("C://ProgramData//Jenkins//.jenkins//workspace//s-pipeline-cucumber-example_main//apiTestRPE//pom.xml") compile'
 
                 }
@@ -22,7 +22,7 @@ pipeline{
             
         }
         
-        /*stage ('Compile Stage') {
+        stage ('Compile Stage') {
             
             steps {
 
@@ -32,7 +32,7 @@ pipeline{
                 }
 
             }
-        }*/
+        }
        stage ('Test Stage') {
 
             steps {

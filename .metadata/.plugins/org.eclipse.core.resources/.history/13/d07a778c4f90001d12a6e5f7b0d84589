@@ -22,7 +22,7 @@ pipeline{
             
         }
         
-        /*stage ('Compile Stage') {
+        stage ('Compile Stage') {
             
             steps {
 
@@ -32,7 +32,7 @@ pipeline{
                 }
 
             }
-        }*/
+        }
        stage ('Test Stage') {
 
             steps {
